@@ -1,0 +1,35 @@
+using System;
+
+namespace BooleanLogic
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Print application title
+            Console.WriteLine("Car Insurance Application");
+
+            // Ask for applicant's age and convert input to integer
+            Console.WriteLine("What is your age?");
+            int age = Convert.ToInt32(Console.ReadLine());
+
+            // Ask about DUI history and normalize input to lowercase for consistency
+            Console.WriteLine("Have you ever had a DUI? (Yes or No)");
+            string answer = Console.ReadLine().ToLower();
+
+            // Convert the string response to a boolean: true if answer is "yes", false otherwise
+            bool dui = answer == "yes";
+
+            // Ask for the number of speeding tickets and convert input to integer
+            Console.WriteLine("How many speeding tickets do you have?");
+            int tickets = Convert.ToInt32(Console.ReadLine());
+
+            // Determine qualification based on the three rules
+            bool qualified = (age > 15) && !dui && (tickets <= 3);
+
+            // Print qualification result
+            Console.WriteLine("Qualified for insurance?");
+            Console.WriteLine(qualified);
+        }
+    }
+}
